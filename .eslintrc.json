@@ -18,6 +18,7 @@
         "quotes": [
             "error",
             "double"
-        ]
+        ],
+        "no-unused-vars": "warn"
     }
 }
