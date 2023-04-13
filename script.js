@@ -1,6 +1,8 @@
 const myLibrary = [];
 const container = document.querySelector(".container");
 const newBookBtn = document.querySelector(".newBook");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 function Book(title,author,pages,read) {
   this.title = title;
@@ -55,5 +57,18 @@ function displayBooks() {
         bookCard.appendChild(cardRead);
     });
 }
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+newBookBtn.addEventListener("click", openModal);
+overlay.addEventListener("click", closeModal);
 
 displayBooks();
