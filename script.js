@@ -26,7 +26,16 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function deleteAllChidNodes(parentNode) {
+  let child = parentNode.lastElementChild;
+  while (child) {
+      parentNode.removeChild(child);
+      child = parentNode.lastElementChild;
+  }
+}
+
 function displayBooks() {
+  let count = 0;
   myLibrary.forEach(book => {
       const bookCard = document.createElement("div");
 
@@ -39,29 +48,35 @@ function displayBooks() {
       const cardPages = document.createElement("div");
       cardPages.innerHTML = `${book.pages  }pages`;
 
-      const cardRead = document.createElement("div");
+      const cardRead = document.createElement("button");
       cardRead.innerHTML = book.read ? "Read" : "Not read";
+
+      const cardRemove = document.createElement("button");
+      cardRemove.setAttribute("id", "remove")
+      cardRemove.innerHTML = "Remove";
 
       bookCard.classList.add("bookCard");
       cardTitle.classList.add("cardTitle");
       cardAuthor.classList.add("cardAuthor");
       cardPages.classList.add("cardPages");
       cardRead.classList.add("cardRead");
+      cardRemove.classList.add(`${count}`);
+      count += 1;
+
+      cardRemove.addEventListener("click", () => {
+        const index = parseInt(cardRemove.className, 10);
+        myLibrary.pop(index);
+        deleteAllChidNodes(container);
+        displayBooks();
+      })
 
       container.appendChild(bookCard);
       bookCard.appendChild(cardTitle);
       bookCard.appendChild(cardAuthor);
       bookCard.appendChild(cardPages);
       bookCard.appendChild(cardRead);
+      bookCard.appendChild(cardRemove);
   });
-}
-
-function deleteAllChidNodes(parentNode) {
-    let child = parentNode.lastElementChild;
-    while (child) {
-        parentNode.removeChild(child);
-        child = parentNode.lastElementChild;
-    }
 }
 
 function openModal() {
