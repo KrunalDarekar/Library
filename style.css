@@ -2,7 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f0eef1;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    font-size: x-large;
 }
 
 .main {
@@ -11,6 +22,56 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #f0eef1;
+}
+
+.main > button {
+    margin: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: 0.01rem solid grey;
+    background-color: rgb(255, 248, 248);
+}
+
+.cardRead {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.main > button:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 350px));
+    gap: 2rem;
+}
+
+.bookCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.bookCard > button {
+    align-self: stretch;
+    border: none;
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+.bookCard > #remove:hover {
+    background-color: #ddd;
+    cursor: pointer;
 }
 
 .modal {
@@ -38,6 +99,24 @@
     align-self: stretch;
 }
 
+.btn-light-green {
+    background-color: #9fff9c;
+}
+
+.btn-light-green:hover {
+    background-color: #79ff74;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: #ff9c9c;
+}
+
+.btn-red:hover {
+    background-color: #ff8282;
+    cursor: pointer;
+}
+
 .add-book-form {
     display: flex;
     flex-direction: column;
@@ -61,6 +140,4 @@
 .hidden {
     display: none;
 }
-
-
   
