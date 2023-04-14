@@ -46,7 +46,7 @@ function displayBooks() {
       cardAuthor.innerHTML = `${book.author}`;
 
       const cardPages = document.createElement("div");
-      cardPages.innerHTML = `${book.pages  }pages`;
+      cardPages.innerHTML = `${book.pages  } pages`;
 
       const cardRead = document.createElement("button");
       if(book.read) {
