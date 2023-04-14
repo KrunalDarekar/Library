@@ -49,7 +49,13 @@ function displayBooks() {
       cardPages.innerHTML = `${book.pages  }pages`;
 
       const cardRead = document.createElement("button");
-      cardRead.innerHTML = book.read ? "Read" : "Not read";
+      if(book.read) {
+        cardRead.innerHTML = "Read";
+        cardRead.classList.toggle("btn-light-green")
+      } else {
+        cardRead.innerHTML = "Not read";
+        cardRead.classList.toggle("btn-red")
+      }
 
       const cardRemove = document.createElement("button");
       cardRemove.setAttribute("id", "remove")
@@ -66,6 +72,12 @@ function displayBooks() {
       cardRemove.addEventListener("click", () => {
         const index = parseInt(cardRemove.className, 10);
         myLibrary.pop(index);
+        deleteAllChidNodes(container);
+        displayBooks();
+      })
+
+      cardRead.addEventListener("click", () => {
+        book.read = !book.read;
         deleteAllChidNodes(container);
         displayBooks();
       })
