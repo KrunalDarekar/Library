@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const myLibrary = [];
 const container = document.querySelector(".container");
 const newBookBtn = document.querySelector(".newBook");
@@ -10,15 +11,56 @@ const formAuthor = document.getElementById("author");
 const formPages = document.getElementById("pages");
 const formIsRead = document.getElementById("isRead")
 
-function Book(title,author,pages,read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  let statement;
-  this.info = () => {
-    statement = read ? "read" : "not read yet";
-    return `${title  }by${  author  },${  pages  },${  statement}`;
+// function Book(title,author,pages,read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+//   let statement;
+//   this.info = () => {
+//     statement = read ? "read" : "not read yet";
+//     return `${title  }by${  author  },${  pages  },${  statement}`;
+//   }
+// }
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(value) {
+    this._title = value;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  set author(value) {
+    this._author = value;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+
+  set pages(value) {
+    this._pages = value;
+  }
+
+  get read() {
+    return this._read;
+  }
+
+  set read(value) {
+    this._read = value;
   }
 }
 
