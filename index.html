@@ -16,7 +16,7 @@
           <section class="modal hidden">
                 <form class="add-book-form" id="addBookForm">
                     <h3>Add new book</h3>
-                    <input
+                    <input required
                       class="input"
                       type="text"
                       id="title"
@@ -24,7 +24,7 @@
                       required
                       maxlength="100"
                     />
-                    <input
+                    <input required
                       class="input"
                       type="text"
                       id="author"
@@ -32,7 +32,7 @@
                       required
                       maxlength="100"
                     />
-                    <input
+                    <input required
                       class="input"
                       type="number"
                       id="pages"
@@ -45,7 +45,7 @@
                       <input class="checkbox" type="checkbox" id="isRead" />
                     </div>
                     <button class="btn btn-light-green" type="submit">Submit</button>
-                  </form>
+                </form>
           </section>
           <div class="overlay hidden"></div>
         <button class="newBook">New Book +</button>

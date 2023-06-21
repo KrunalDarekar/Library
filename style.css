@@ -99,6 +99,14 @@ header {
     align-self: stretch;
 }
 
+.modal input:required {
+    background-color: #fccece;
+}
+
+.modal input:valid {
+    background-color: white;
+}
+
 .btn-light-green {
     background-color: #9fff9c;
 }

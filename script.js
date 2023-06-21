@@ -144,6 +144,23 @@ function closeModal() {
 };
 
 submitBtn.addEventListener("click", (event) => {
+  if (formTitle.validity.valueMissing) {
+    console.log(formTitle.value);
+    formTitle.setCustomValidity("the title cannot be empty");
+    return;
+  }
+  formTitle.setCustomValidity("");
+  if (formAuthor.validity.valueMissing) {
+    formAuthor.setCustomValidity("the author name cannot be empty");
+    return;
+  }
+  formAuthor.setCustomValidity("");
+  if (formPages.validity.valueMissing) {
+    formPages.setCustomValidity("the pages field cannot be empty");
+    return;
+  }
+  formPages.setCustomValidity("");
+
   const newTitle = formTitle.value;
   const newAuthor = formAuthor.value;
   const newPages = formPages.value;
